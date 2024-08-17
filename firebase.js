@@ -14,13 +14,9 @@ const firebaseConfig = {
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  let analytics;
-if (typeof window !== 'undefined') {
-  isSupported().then((supported) => {
-    if (supported) {
-      analytics = getAnalytics(app);
-    }
-  });
-}
+ 
+
+     const analytics = getAnalytics(app);
+
   const firestore = getFirestore(app);
   export {firestore,app,analytics}
